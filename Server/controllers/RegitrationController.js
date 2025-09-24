@@ -1,0 +1,314 @@
+const UserModel = require("../models/RegistrationModel");
+const Order = require("../models/orderModel");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const nodemailer = require("nodemailer");
+const { sendMailer } = require("../utils/mail");
+
+// Register new user (Create)
+const Registration = async (req, res) => {
+  const {
+    firmName,
+    contactName,
+    contactType,
+    mobile1,
+    mobile2,
+    whatsapp,
+    email,
+    state,
+    city,
+    address,
+    password,
+    limit,
+    discount,
+  } = req.body;
+
+  console.log("data reached here");
+  console.log(req.body);
+
+  try {
+    // Check if user already exists
+    const existingUser = await UserModel.findOne({ email });
+    if (existingUser) {
+      return res
+        .status(400)
+        .json({ message: "User already exists with this email." });
+    }
+
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create user
+    const user = await UserModel.create({
+      firmName,
+      contactName,
+      contactType,
+      mobile1,
+      mobile2,
+      whatsapp,
+      email,
+      state,
+      city,
+      address,
+      password: hashedPassword,
+      limit,
+      discount,
+    });
+
+    res
+      .status(201)
+      .json({ message: "User successfully registered!", userId: user._id });
+  } catch (error) {
+    console.error("Registration error:", error);
+    res.status(500).json({ message: "An error occurred during registration." });
+  }
+};
+
+// Get single user by ID (Read)
+const getUserById = async (req, res) => {
+  try {
+    const user = await UserModel.findById(req.params.id).select("-password");
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    res
+      .status(500)
+      .json({ message: "An error occurred while fetching the user." });
+  }
+};
+
+// Update user (Update)
+// Make sure this is installed
+
+const updateUser = async (req, res) => {
+  const { id } = req.params;
+  const updateData = req.body;
+
+  try {
+    // If password is being updated, hash it first
+    if (updateData.password) {
+      const salt = await bcrypt.genSalt(10);
+      updateData.password = await bcrypt.hash(updateData.password, salt);
+    }
+
+    const updatedUser = await UserModel.findByIdAndUpdate(id, updateData, {
+      new: true,
+      runValidators: true,
+    }).select("-password");
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    // ✅ Send email after successful update
+    // const transporter = nodemailer.createTransport({
+    //   service: "gmail", // or use SMTP settings for production
+    //   auth: {
+    //     user: 'adityajainghetal@gmail.com',  // Secure way: use environment variables
+    //      pass: 'wjiv vwra gbpo mkgr'
+    //   },
+    // });
+
+    // const mailOptions = {
+    //   from: "adityajainghetal@gmail.com",
+    //   to: updatedUser.email, // make sure `email` is in the user model
+    //   subject: "Your Profile Has Been Updated",
+    //   html: `
+    //     <h3>Hello ${updatedUser.name || "User"},</h3>
+    //     <p>Your profile has been updated successfully.</p>
+    //     <p>If you didn't request this update, please contact support immediately.</p>
+    //     <br />
+    //     <p>Thank you,<br />Team</p>
+    //   `,
+    // };
+
+    // await transporter.sendMail(mailOptions);
+
+    res
+      .status(200)
+      .json({ message: "User updated successfully!", user: updatedUser });
+  } catch (error) {
+    console.error("Error updating user:", error);
+    res
+      .status(500)
+      .json({ message: "An error occurred while updating the user." });
+  }
+};
+
+// Delete user (Delete)
+const deleteUser = async (req, res) => {
+  try {
+    const deletedUser = await UserModel.findByIdAndDelete(req.params.id);
+    if (!deletedUser) {
+      return res.status(404).json({ message: "User not found." });
+    }
+    res.status(200).json({ message: "User deleted successfully!" });
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    res
+      .status(500)
+      .json({ message: "An error occurred while deleting the user." });
+  }
+};
+
+// User login
+const Login = async (req, res) => {
+  const { email, password } = req.body;
+
+  console.log(email);
+
+  console.log(password);
+  console.log(req.body);
+
+  if (!email || !password) {
+    return res.status(400).json({ error: "Email and password are required." });
+  }
+
+  try {
+    const user = await UserModel.findOne({ email });
+
+    if (!user) {
+      return res.status(401).json({ error: "Invalid email or password." });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({ error: "Invalid email or password." });
+    }
+
+    // Create JWT token (optional, include secret)
+    const token = jwt.sign({ userId: user._id }, "fiuhfulhffhkjhfskjhi", {
+      expiresIn: "7d",
+    });
+    const StaticMessage = `
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    }
+    .email-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #007bff;
+            }
+            p {
+                font-size: 16px;
+                color: #333;
+                }
+                .footer {
+                    margin-top: 20px;
+                    font-size: 12px;
+                    color: #aaa;
+                    }
+                    </style>
+                    </head>
+                    <body>
+                    <div class="email-container">
+                    <h2>Welcome to Burkha!</h2>
+                    <p>successfully login done</p>
+                    
+                    </div>
+                    </body>
+                    </html>
+                    `;
+    await sendMailer({ to: email, subject: "login" });
+
+    res.status(200).json({
+      message: "Login successful",
+      token,
+      user: { ...user._doc, password: undefined },
+    });
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+// Get all users (excluding passwords)
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await UserModel.find({}, { password: 0 });
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ error: "An error occurred while fetching users." });
+  }
+};
+
+// Get vendor/order by ID
+const getVendorById = async (req, res) => {
+  try {
+    const product = await Order.findById(req.params.id);
+    if (!product) {
+      return res.status(404).json({ message: "Order not found" });
+    }
+    res.status(200).json(product);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Reset password
+const resetPassword = async (req, res) => {
+  const { oldPassword, newPassword, confirmPassword, email } = req.body;
+
+  try {
+    if (!oldPassword || !newPassword || !confirmPassword || !email) {
+      return res.status(400).json({ message: "All fields are required." });
+    }
+
+    if (newPassword !== confirmPassword) {
+      return res.status(400).json({ message: "New passwords do not match." });
+    }
+
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Old password is incorrect." });
+    }
+
+    if (newPassword.length < 6) {
+      return res
+        .status(400)
+        .json({ message: "Password must be at least 6 characters." });
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    await UserModel.findOneAndUpdate({ email }, { password: hashedPassword });
+
+    res.status(200).json({ message: "Password reset successfully." });
+  } catch (error) {
+    console.error("Reset password error:", error);
+    res.status(500).json({ message: "Server error during password reset." });
+  }
+};
+
+module.exports = {
+  Registration,
+  getAllUsers,
+  getUserById,
+  updateUser,
+  deleteUser,
+  Login,
+  getAllUsers,
+  getVendorById,
+  resetPassword,
+};
