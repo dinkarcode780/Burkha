@@ -20,17 +20,27 @@ import User from "./pages/Loginpages/User";
 
 import ProtectedRoute from "./components/protect/ProtectedRoute";
 import CheckOut from "./pages/Checkout/checkout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ThankYou from "./pages/Checkout/Thankyou";
 import Zoomer from "./About/Zoomer";
+import CreatePopup from "./pages/Popup/CreatePopup";
 
 function App() {
   const [searchProductData, setsearchProductData] = useState();
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  useEffect(() => {
+    // Open popup on initial page load
+    setIsPopupOpen(true);
+  }, []);
 
   return (
     <BrowserRouter>
       <RouteScrollToTop />
       <PhosphorIconInit />
+
+
+      <CreatePopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
       <Routes>
         <Route exact path="/t" element={<Zoomer />} />
@@ -98,9 +108,22 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+    
+
+
         <Route exact path="/thank-you" element={<ThankYou />} />
 
         {/* <Route exact path="/account" element={<AccountPage />} /> */}
+
+
+         {/* Popup CRUD */}
+      {/* <Route exact path="/popups" element={<PopupList />} />             */}
+      <Route exact path="/popups/create" element={<CreatePopup />} />    
+      {/* <Route exact path="/popups/:id/edit" element={<PopupEdit />} />     */}
+      {/* <Route exact path="/popups/:id" element={<PopupView />} />   */}
+
+
         <Route
   exact
   path="/account"

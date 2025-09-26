@@ -21,6 +21,7 @@ const BannerRoute = require("./routes/BannerRoute");
 const LoginRoute = require("./routes/userRoute");
 const CheckRoute = require("./routes/Checkoutroute");
 const PaymentRoute = require("./routes/paymentRoute");
+const popupRoute = require("./routes/popupRoute");
 
 
 // db connect
@@ -89,6 +90,10 @@ app.use("/auth", LoginRoute);
 
 // payments user routes
 app.use("/paymentuser", PaymentRoute);
+
+// Popup Routes
+
+app.use("/popup",popupRoute);
 
 
 app.listen(8080, () => {
