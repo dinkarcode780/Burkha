@@ -577,7 +577,7 @@ const CreatePopup = ({ isOpen, onClose }) => {
           border: 'none',
           fontSize: '24px',
           cursor: 'pointer',
-          color: '#000',
+          color: '#ffffff',
         }}
       >
         x

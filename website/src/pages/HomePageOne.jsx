@@ -12,6 +12,9 @@ import FooterOne from "../components/FooterOne";
 import BottomFooter from "../components/BottomFooter";
 import ScrollToTop from "react-scroll-to-top";
 import ColorInit from "../helper/ColorInit";
+import Slidder from "../pages/Slidder/Slidder"
+import HomeCategoryAndSubcategoryPage from "./HomeCategoyAdnSucategoryPage/HomeCategoyAdnSucategoryPage";
+// import ImageSlider from "../pages/ImageSlider"; // Corrected from Slidder to ImageSlider
 const HomePageOne = ({ setsubcategory, data1 }) => {
   return (
     <>
@@ -26,6 +29,8 @@ const HomePageOne = ({ setsubcategory, data1 }) => {
 
       {/* BannerOne */}
       <BannerOne />
+      <Slidder />
+      <HomeCategoryAndSubcategoryPage/>
 
       {/* RecommendedOne */}
       <RecommendedOne />
