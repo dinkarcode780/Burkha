@@ -156,74 +156,179 @@ const deleteUser = async (req, res) => {
 };
 
 // User login
+// const Login = async (req, res) => {
+//   const { email, password } = req.body;
+
+//   console.log(email);
+
+//   console.log(password);
+//   console.log(req.body);
+
+//   if (!email || !password) {
+//     return res.status(400).json({ error: "Email and password are required." });
+//   }
+
+//   try {
+//     const user = await UserModel.findOne({ email });
+
+//     if (!user) {
+//       return res.status(401).json({ error: "Invalid email or password." });
+//     }
+
+//     const isMatch = await bcrypt.compare(password, user.password);
+//     if (!isMatch) {
+//       return res.status(401).json({ error: "Invalid email or password." });
+//     }
+
+//     // Create JWT token (optional, include secret)
+//     const token = jwt.sign({ userId: user._id }, "fiuhfulhffhkjhfskjhi", {
+//       expiresIn: "7d",
+//     });
+//     const StaticMessage = `
+//   <!DOCTYPE html>
+//   <html>
+//   <head>
+//   <style>
+//   body {
+//     font-family: Arial, sans-serif;
+//     background-color: #f9f9f9;
+//     padding: 20px;
+//     }
+//     .email-container {
+//         background-color: #fff;
+//         padding: 30px;
+//         border-radius: 8px;
+//         box-shadow: 0 0 10px rgba(0,0,0,0.1);
+//         }
+//         h2 {
+//             color: #007bff;
+//             }
+//             p {
+//                 font-size: 16px;
+//                 color: #333;
+//                 }
+//                 .footer {
+//                     margin-top: 20px;
+//                     font-size: 12px;
+//                     color: #aaa;
+//                     }
+//                     </style>
+//                     </head>
+//                     <body>
+//                     <div class="email-container">
+//                     <h2>Welcome to Burkha!</h2>
+//                     <p>successfully login done</p>
+                    
+//                     </div>
+//                     </body>
+//                     </html>
+//                     `;
+//     await sendMailer({ to: email, subject: "login" });
+
+//     res.status(200).json({
+//       message: "Login successful",
+//       token,
+//       user: { ...user._doc, password: undefined },
+//     });
+//   } catch (error) {
+//     console.error("Login error:", error);
+//     res.status(500).json({ error: "Internal server error" });
+//   }
+// };
+
+
+
+// const Login = async (req, res) => {
+//   const { email, password, mobile1 } = req.body;
+
+//   // At least one identifier must be provided
+//   if ((!email || !password) && !mobile1) {
+//     return res.status(400).json({ error: "Provide either mobile number or email and password." });
+//   }
+
+//   try {
+//     let user;
+//     if (mobile1) {
+//       // Login with mobile number (no password required)
+//       user = await UserModel.findOne({ mobile1 });
+//       if (!user) {
+//         return res.status(401).json({ error: "Invalid mobile number." });
+//       }
+//     } else {
+//       // Login with email and password
+//       user = await UserModel.findOne({ email });
+//       if (!user) {
+//         return res.status(401).json({ error: "Invalid email or password." });
+//       }
+//       const isMatch = await bcrypt.compare(password, user.password);
+//       if (!isMatch) {
+//         return res.status(401).json({ error: "Invalid email or password." });
+//       }
+//     }
+
+//     // Create JWT token
+//     const token = jwt.sign({ userId: user._id }, "fiuhfulhffhkjhfskjhi", {
+//       expiresIn: "7d",
+//     });
+
+//     await sendMailer({ to: user.email, subject: "login" });
+
+//     res.status(200).json({
+//       message: "Login successful",
+//       token,
+//       user: { ...user._doc, password: undefined },
+//     });
+//   } catch (error) {
+//     console.error("Login error:", error);
+//     res.status(500).json({ error: "Internal server error" });
+//   }
+// };
+
+async function sendSMS({ to, message }) {
+  console.log(`SMS sent to ${to}: ${message}`);
+}
+
 const Login = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, mobile1 } = req.body;
 
-  console.log(email);
-
-  console.log(password);
-  console.log(req.body);
-
-  if (!email || !password) {
-    return res.status(400).json({ error: "Email and password are required." });
+  // At least one identifier must be provided
+  if ((!email || !password) && !mobile1) {
+    return res.status(400).json({ error: "Provide either mobile number or email and password." });
   }
 
   try {
-    const user = await UserModel.findOne({ email });
-
-    if (!user) {
-      return res.status(401).json({ error: "Invalid email or password." });
+    let user;
+    if (mobile1) {
+      // Login with mobile number (no password required)
+      user = await UserModel.findOne({ mobile1 });
+      if (!user) {
+        return res.status(401).json({ error: "Invalid mobile number." });
+      }
+      // Send SMS login message
+      await sendSMS({
+        to: mobile1,
+        message: "You have successfully logged in to Burkha!"
+      });
+      // Send email login message (using user's email from DB)
+      await sendMailer({ to: user.email, subject: "login" });
+    } else {
+      // Login with email and password
+      user = await UserModel.findOne({ email });
+      if (!user) {
+        return res.status(401).json({ error: "Invalid email or password." });
+      }
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return res.status(401).json({ error: "Invalid email or password." });
+      }
+      // Send email login message
+      await sendMailer({ to: user.email, subject: "login" });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(401).json({ error: "Invalid email or password." });
-    }
-
-    // Create JWT token (optional, include secret)
+    // Create JWT token
     const token = jwt.sign({ userId: user._id }, "fiuhfulhffhkjhfskjhi", {
       expiresIn: "7d",
     });
-    const StaticMessage = `
-  <!DOCTYPE html>
-  <html>
-  <head>
-  <style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    padding: 20px;
-    }
-    .email-container {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #007bff;
-            }
-            p {
-                font-size: 16px;
-                color: #333;
-                }
-                .footer {
-                    margin-top: 20px;
-                    font-size: 12px;
-                    color: #aaa;
-                    }
-                    </style>
-                    </head>
-                    <body>
-                    <div class="email-container">
-                    <h2>Welcome to Burkha!</h2>
-                    <p>successfully login done</p>
-                    
-                    </div>
-                    </body>
-                    </html>
-                    `;
-    await sendMailer({ to: email, subject: "login" });
 
     res.status(200).json({
       message: "Login successful",
