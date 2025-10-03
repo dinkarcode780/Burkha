@@ -1053,7 +1053,7 @@ const handleImport = (event) => {
       <img
         src={previewImage}
         alt="Preview"
-        className="w-full h-auto max-h-[80vh] object-cover rounded-lg"
+        className="w-full h-full max-h-[90vh] object-contain rounded-lg"
       />
     </div>
   </div>

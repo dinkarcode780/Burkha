@@ -18,7 +18,9 @@ import {
   ClipboardList,
   Truck,
   UserPlus,
-  BarChart2
+  BarChart2,
+  SlidersHorizontal,
+  Pencil
 } from "lucide-react";
 import { MdOutlinePayments } from "react-icons/md";
 import ScanQRCode from "./pages/ScanQRCode";
@@ -60,6 +62,9 @@ import RegistrationVendor from "./pages/RegsitartionVendor/RegistrationVendor";
 import Outstanding from "./pages/Outstanding";
 import CreateOrder from "./pages/CreateOrder";
 import Catalogue from "./pages/Catelouge";
+import SlidderPage from "./pages/ShowAllSlider/SlidderPage";
+import AddSlidderPage from "./pages/ShowAllSlider/AddSlidderPage";
+import UpdateSlidderPage from "./pages/ShowAllSlider/UpdateSlidderPage";
 
 
 
@@ -120,6 +125,18 @@ function AppContent({ onLogout }) {
         { to: "/create", label: "Add Product", icon: PlusCircle },
       ],
     },
+
+     {
+          label: "Slidder",
+          icon: SlidersHorizontal,
+          subItems: [
+            { to: "/allslidder", label: "All Slider", icon: List },
+            // { to: "/subcategories", label: "Sub-Categories", icon: Grid },
+            { to: "/add-slidde", label: "Add Slider", icon: PlusCircle },
+            { to: "/update-slidder", label: "Update Slider", icon: Pencil },
+          ],
+        },
+    
 
     {
       label: "View Products",
@@ -409,6 +426,9 @@ function AppContent({ onLogout }) {
               <Route path="/outstanding-payments" element={<Outstanding/>}/>
               <Route path="/create-order" element={<CreateOrder />} />
               <Route path="/catalogue" element={<Catalogue/>}/>
+              <Route path="/allslidder" element={<SlidderPage/>}/>
+              <Route path="/add-slidder" element={<AddSlidderPage />} />
+              <Route path="/update-slidder" element={<UpdateSlidderPage />}/>
              
             </Routes>
           </div>

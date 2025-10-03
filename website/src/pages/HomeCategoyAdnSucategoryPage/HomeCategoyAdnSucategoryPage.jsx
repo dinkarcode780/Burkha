@@ -1,258 +1,77 @@
-// import React from 'react';
-// import "../../index.css"; 
-// const HomeCategoryAndSubcategoryPage = () => {
-//   return (
-//     <div className="bg-beige-100 text-gray-800 font-sans min-h-screen">
-//       <div className="container mx-auto p-6">
-//         {/* Header Section */}
-//         <div className="text-center py-10">
-//           <h1 className="text-5xl font-bold text-maroon-800">
-//             We bring <span className="text-maroon-600">Eleg</span> to your wardrobe
-//           </h1>
-//         </div>
-
-//         {/* Categories Section */}
-//         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 py-10">
-//           <div className="text-center">
-//             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-gray-200">
-//               <img
-//                 src="https://comfobynoor.in/wp-content/uploads/2025/02/WhatsApp-Image-2023-12-14-at-2.04.25-PM-5-700x1022-1-600x876.jpg"
-//                 alt="Hijabs"
-//                 className="w-full h-full object-cover"
-//               />
-//             </div>
-//             <p className="mt-4 text-lg font-medium">Hijabs</p>
-//           </div>
-//           <div className="text-center">
-//             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-gray-200">
-//               <img
-//                 src="https://via.placeholder.com/150?text=Prayer+Collections"
-//                 alt="Prayer Collections"
-//                 className="w-full h-full object-cover"
-//               />
-//             </div>
-//             <p className="mt-4 text-lg font-medium">Prayer Collections</p>
-//           </div>
-//           <div className="text-center">
-//             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-gray-200">
-//               <img
-//                 src="https://via.placeholder.com/150?text=Abayas"
-//                 alt="Abayas"
-//                 className="w-full h-full object-cover"
-//               />
-//             </div>
-//             <p className="mt-4 text-lg font-medium">Abayas</p>
-//           </div>
-//           <div className="text-center">
-//             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-gray-200">
-//               <img
-//                 src="https://via.placeholder.com/150?text=Accessories"
-//                 alt="Accessories"
-//                 className="w-full h-full object-cover"
-//               />
-//             </div>
-//             <p className="mt-4 text-lg font-medium">Accessories</p>
-//           </div>
-//         </div>
-
-//         {/* Explore by Fabrics Section */}
-//         <div className="py-10">
-//           <h2 className="text-4xl font-bold text-maroon-800 text-center mb-8">
-//             Explore by Fabrics
-//           </h2>
-//           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-//             <div className="text-center">
-//               <div className="w-32 h-32 mx-auto border-4 border-maroon-800 rounded-lg overflow-hidden bg-gray-200">
-//                 <img
-//                   src="https://via.placeholder.com/128?text=Organza"
-//                   alt="Organza"
-//                   className="w-full h-full object-cover"
-//                 />
-//               </div>
-//               <p className="mt-4 text-lg font-medium">Organza</p>
-//             </div>
-//             <div className="text-center">
-//               <div className="w-32 h-32 mx-auto border-4 border-maroon-800 rounded-lg overflow-hidden bg-gray-200">
-//                 <img
-//                   src="https://via.placeholder.com/128?text=Jersey"
-//                   alt="Jersey"
-//                   className="w-full h-full object-cover"
-//                 />
-//               </div>
-//               <p className="mt-4 text-lg font-medium">Jersey</p>
-//             </div>
-//             <div className="text-center">
-//               <div className="w-32 h-32 mx-auto border-4 border-maroon-800 rounded-lg overflow-hidden bg-gray-200">
-//                 <img
-//                   src="https://via.placeholder.com/128?text=Cotton"
-//                   alt="Cotton"
-//                   className="w-full h-full object-cover"
-//                 />
-//               </div>
-//               <p className="mt-4 text-lg font-medium">Cotton</p>
-//             </div>
-//             <div className="text-center">
-//               <div className="w-32 h-32 mx-auto border-4 border-maroon-800 rounded-lg overflow-hidden bg-gray-200">
-//                 <img
-//                   src="https://via.placeholder.com/128?text=Georgette"
-//                   alt="Georgette"
-//                   className="w-full h-full object-cover"
-//                 />
-//               </div>
-//               <p className="mt-4 text-lg font-medium">Georgette</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HomeCategoryAndSubcategoryPage;
-
-
-
-// import React from 'react';
-// import "../../index.css";
-
-// const HomeCategoryAndSubcategoryPage = () => {
-//   return (
-//     <div className="page-wrapper">
-//       <div className="content-container">
-//         {/* Header Section */}
-//         <div className="header-section">
-//           <h1 className="main-slogan">
-//             We bring <span className="highlight">Eleg</span> to your wardrobe
-//           </h1>
-//         </div>
-
-//         {/* Categories Section */}
-//         <div className="categories-section">
-//           <div className="category-grid">
-//             <div className="category-card">
-//               <div className="category-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/02/WhatsApp-Image-2023-12-14-at-2.04.25-PM-5-700x1022-1-600x876.jpg"
-//                   alt="Hijabs"
-//                 />
-//               </div>
-//               <p className="category-title">Hijabs</p>
-//             </div>
-//             <div className="category-card">
-//               <div className="category-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/02/IMG_2043-scaled-1.jpg"
-//                   alt="Prayer Collections"
-//                 />
-//               </div>
-//               <p className="category-title">Prayer Collections</p>
-//             </div>
-//             <div className="category-card">
-//               <div className="category-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-12-at-15.29.20_4b1d513d-scaled.jpg"
-//                   alt="Abayas"
-//                 />
-//               </div>
-//               <p className="category-title">Abayas</p>
-//             </div>
-//             <div className="category-card">
-//               <div className="category-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png"
-//                   alt="Accessories"
-//                 />
-//               </div>
-//               <p className="category-title">Accessories</p>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Explore by Fabrics Section */}
-//         <div className="fabrics-section">
-//           <h2 className="fabrics-title">Explore by Fabrics</h2>
-//           <div className="fabric-grid">
-//             <div className="fabric-card">
-//               <div className="fabric-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/04/9-300x300.png"
-//                   alt="Organza"
-//                 />
-//               </div>
-//               <p className="fabric-title">Organza</p>
-//             </div>
-//             <div className="fabric-card">
-//               <div className="fabric-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/04/Untitled-design-35-300x300.png"
-//                   alt="Jersey"
-//                 />
-//               </div>
-//               <p className="fabric-title">Jersey</p>
-//             </div>
-//             <div className="fabric-card">
-//               <div className="fabric-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/04/6-300x300.png"
-//                   alt="Cotton"
-//                 />
-//               </div>
-//               <p className="fabric-title">Cotton</p>
-//             </div>
-//             <div className="fabric-card">
-//               <div className="fabric-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png"
-//                   alt="Georgette"
-//                 />
-//               </div>
-//               <p className="fabric-title">Georgette</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HomeCategoryAndSubcategoryPage;
-
-
-// import React, { useEffect, useRef } from 'react';
+// import React, { useEffect, useState, useRef } from 'react';
 // import "../../index.css";
 
 // const HomeCategoryAndSubcategoryPage = () => {
 //   const categoryGridRef = useRef(null);
 //   const fabricGridRef = useRef(null);
+//   const visibleCount = 4; // Number of items to show at a time
+
+//   // Categories data
+//   const categoryCards = [
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/02/WhatsApp-Image-2023-12-14-at-2.04.25-PM-5-700x1022-1-600x876.jpg", title: "Hijabs" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/02/IMG_2043-scaled-1.jpg", title: "Prayer Collections" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-12-at-15.29.20_4b1d513d-scaled.jpg", title: "Abayas" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png", title: "Accessories" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png", title: "Accessories 2" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png", title: "Accessories 3" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png", title: "Accessories 4" }
+//   ];
+//   const extendedCategoryCards = [...categoryCards, ...categoryCards.slice(0, visibleCount)];
+
+//   const [categoryIndex, setCategoryIndex] = useState(0);
+//   const [categoryCardWidth, setCategoryCardWidth] = useState(0);
+
+//   // Fabrics data
+//   const fabricCards = [
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/04/9-300x300.png", title: "Organza" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/04/Untitled-design-35-300x300.png", title: "Jersey" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/04/6-300x300.png", title: "Cotton" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette 2" },
+//     { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette 3" },
+//     // { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette 4" },
+//     // { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette 5" }
+//   ];
+//   const extendedFabricCards = [...fabricCards, ...fabricCards.slice(0, visibleCount)];
+
+//   const [fabricIndex, setFabricIndex] = useState(0);
+//   const [fabricCardWidth, setFabricCardWidth] = useState(0);
 
 //   useEffect(() => {
-//     const categoryGrid = categoryGridRef.current;
-//     const fabricGrid = fabricGridRef.current;
-//     const scrollSpeed = 1; // Pixels per frame
-//     let scrollPositionCategory = 0;
-//     let scrollPositionFabric = 0;
-
-//     const animateScroll = () => {
-//       if (categoryGrid) {
-//         scrollPositionCategory -= scrollSpeed;
-//         if (scrollPositionCategory <= -categoryGrid.scrollWidth / 2) {
-//           scrollPositionCategory = 0; // Reset to start when halfway through
-//         }
-//         categoryGrid.style.transform = `translateX(${scrollPositionCategory}px)`;
+//     const updateWidths = () => {
+//       if (categoryGridRef.current && categoryGridRef.current.children[0]) {
+//         const card = categoryGridRef.current.children[0];
+//         const style = getComputedStyle(card);
+//         const width = card.offsetWidth + parseFloat(style.marginRight);
+//         setCategoryCardWidth(width);
 //       }
-//       if (fabricGrid) {
-//         scrollPositionFabric -= scrollSpeed;
-//         if (scrollPositionFabric <= -fabricGrid.scrollWidth / 2) {
-//           scrollPositionFabric = 0; // Reset to start when halfway through
-//         }
-//         fabricGrid.style.transform = `translateX(${scrollPositionFabric}px)`;
+//       if (fabricGridRef.current && fabricGridRef.current.children[0]) {
+//         const card = fabricGridRef.current.children[0];
+//         const style = getComputedStyle(card);
+//         const width = card.offsetWidth + parseFloat(style.marginRight);
+//         setFabricCardWidth(width);
 //       }
 //     };
 
-//     const interval = setInterval(animateScroll, 16); // Approx 60 FPS
-
-//     return () => clearInterval(interval); // Cleanup on unmount
+//     updateWidths();
+//     window.addEventListener('resize', updateWidths);
+//     return () => window.removeEventListener('resize', updateWidths);
 //   }, []);
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCategoryIndex((prev) => {
+//         const next = prev + 1;
+//         return next >= categoryCards.length ? 0 : next;
+//       });
+//       setFabricIndex((prev) => {
+//         const next = prev + 1;
+//         return next >= fabricCards.length ? 0 : next;
+//       });
+//     }, 3000); // Advance every 3 seconds
+
+//     return () => clearInterval(interval);
+//   }, [categoryCards.length, fabricCards.length]);
 
 //   return (
 //     <div className="page-wrapper">
@@ -260,106 +79,372 @@
 //         {/* Header Section */}
 //         <div className="header-section">
 //           <h1 className="main-slogan">
-//             We bring <span className="highlight">Eleg</span> to your wardrobe
+//             We bring <span className="highlight">Elegance</span> to your wardrobe
 //           </h1>
 //         </div>
 
 //         {/* Categories Section */}
 //         <div className="categories-section">
-//           <div className="category-grid" ref={categoryGridRef}>
-//             <div className="category-card">
-//               <div className="category-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/02/WhatsApp-Image-2023-12-14-at-2.04.25-PM-5-700x1022-1-600x876.jpg"
-//                   alt="Hijabs"
-//                 />
-//               </div>
-//               <p className="category-title">Hijabs</p>
+//           <div className="category-grid-wrapper" style={{ width: `${visibleCount * categoryCardWidth}px` }}>
+//             <div className="category-grid" ref={categoryGridRef} style={{ transform: `translateX(-${categoryIndex * categoryCardWidth}px)`, transition: 'transform 0.5s ease-in-out' }}>
+//               {extendedCategoryCards.map((card, index) => (
+//                 <div className="category-card" key={index}>
+//                   <div className="category-image">
+//                     <img src={card.src} alt={card.title} />
+//                   </div>
+//                   <p className="category-title">{card.title}</p>
+//                 </div>
+//               ))}
 //             </div>
-//             <div className="category-card">
-//               <div className="category-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/02/IMG_2043-scaled-1.jpg"
-//                   alt="Prayer Collections"
-//                 />
-//               </div>
-//               <p className="category-title">Prayer Collections</p>
-//             </div>
-//             <div className="category-card">
-//               <div className="category-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-12-at-15.29.20_4b1d513d-scaled.jpg"
-//                   alt="Abayas"
-//                 />
-//               </div>
-//               <p className="category-title">Abayas</p>
-//             </div>
-//             <div className="category-card">
-//               <div className="category-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png"
-//                   alt="Accessories"
-//                 />
-//               </div>
-//               <p className="category-title">Accessories</p>
-//             </div>
-
-
-
-//             <div className="category-card">
-//               <div className="category-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png"
-//                   alt="Accessories"
-//                 />
-//               </div>
-//               <p className="category-title">Accessories</p>
-//             </div>
-            
-
-
 //           </div>
 //         </div>
 
 //         {/* Explore by Fabrics Section */}
 //         <div className="fabrics-section">
 //           <h2 className="fabrics-title">Explore by Fabrics</h2>
-//           <div className="fabric-grid" ref={fabricGridRef}>
-//             <div className="fabric-card">
-//               <div className="fabric-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/04/9-300x300.png"
-//                   alt="Organza"
-//                 />
-//               </div>
-//               <p className="fabric-title">Organza</p>
+//           <div className="fabric-grid-wrapper" style={{ width: `${visibleCount * fabricCardWidth}px` }}>
+//             <div className="fabric-grid" ref={fabricGridRef} style={{ transform: `translateX(-${fabricIndex * fabricCardWidth}px)`, transition: 'transform 0.5s ease-in-out' }}>
+//               {extendedFabricCards.map((card, index) => (
+//                 <div className="fabric-card" key={index}>
+//                   <div className="fabric-image">
+//                     <img src={card.src} alt={card.title} />
+//                   </div>
+//                   <p className="fabric-title">{card.title}</p>
+//                 </div>
+//               ))}
 //             </div>
-//             <div className="fabric-card">
-//               <div className="fabric-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/04/Untitled-design-35-300x300.png"
-//                   alt="Jersey"
-//                 />
-//               </div>
-//               <p className="fabric-title">Jersey</p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default HomeCategoryAndSubcategoryPage;
+
+
+
+// import React, { useEffect, useState, useRef } from 'react';
+// import axios from 'axios';
+// import "../../index.css";
+
+// const HomeCategoryAndSubcategoryPage = () => {
+//   const categoryGridRef = useRef(null);
+//   const fabricGridRef = useRef(null);
+//   const visibleCount = 4; // Number of items to show at a time
+
+//   // State for API data
+//   const [categories, setCategories] = useState([]);
+//   const [products, setProducts] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   // State for carousel
+//   const [categoryIndex, setCategoryIndex] = useState(0);
+//   const [fabricIndex, setFabricIndex] = useState(0);
+//   const [categoryCardWidth, setCategoryCardWidth] = useState(0);
+//   const [fabricCardWidth, setFabricCardWidth] = useState(0);
+
+//   // Fetch categories and products
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         setLoading(true);
+//         const [categoriesRes, productsRes] = await Promise.all([
+//           axios.get("http://localhost:8080/category"),
+//           axios.get("http://localhost:8080/product"),
+//         ]);
+//         setCategories(categoriesRes.data);
+//         setProducts(productsRes.data);
+//       } catch (error) {
+//         setError("Error fetching data");
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     fetchData();
+//   }, []);
+
+//   // Prepare category cards
+//   const categoryCards = categories.map(category => ({
+//     src: category.image || "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png",
+//     title: category.name
+//   }));
+//   const extendedCategoryCards = [...categoryCards, ...categoryCards.slice(0, visibleCount)];
+
+//   // Prepare fabric cards
+//   const uniqueFabrics = [...new Set(products.map(product => product.fabric).filter(fabric => fabric && fabric !== "No fabric specified"))];
+//   const fabricCards = uniqueFabrics.map(fabric => ({
+//     src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", // Placeholder image for fabrics
+//     title: fabric
+//   }));
+//   const extendedFabricCards = [...fabricCards, ...fabricCards.slice(0, visibleCount)];
+
+//   // Update card widths
+//   useEffect(() => {
+//     const updateWidths = () => {
+//       if (categoryGridRef.current && categoryGridRef.current.children[0]) {
+//         const card = categoryGridRef.current.children[0];
+//         const style = getComputedStyle(card);
+//         const width = card.offsetWidth + parseFloat(style.marginRight);
+//         setCategoryCardWidth(width);
+//       }
+//       if (fabricGridRef.current && fabricGridRef.current.children[0]) {
+//         const card = fabricGridRef.current.children[0];
+//         const style = getComputedStyle(card);
+//         const width = card.offsetWidth + parseFloat(style.marginRight);
+//         setFabricCardWidth(width);
+//       }
+//     };
+
+//     updateWidths();
+//     window.addEventListener('resize', updateWidths);
+//     return () => window.removeEventListener('resize', updateWidths);
+//   }, [categories, fabricCards]);
+
+//   // Carousel auto-scroll
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCategoryIndex((prev) => {
+//         const next = prev + 1;
+//         return next >= categoryCards.length ? 0 : next;
+//       });
+//       setFabricIndex((prev) => {
+//         const next = prev + 1;
+//         return next >= fabricCards.length ? 0 : next;
+//       });
+//     }, 3000); // Advance every 3 seconds
+
+//     return () => clearInterval(interval);
+//   }, [categoryCards.length, fabricCards.length]);
+
+//   if (loading) {
+//     return <div className="text-center py-5">Loading...</div>;
+//   }
+
+//   if (error) {
+//     return <div className="text-center text-danger py-5">{error}</div>;
+//   }
+
+//   return (
+//     <div className="page-wrapper">
+//       <div className="content-container">
+//         {/* Header Section */}
+//         <div className="header-section">
+//           <h1 className="main-slogan">
+//             We bring <span className="highlight">Elegance</span> to your wardrobe
+//           </h1>
+//         </div>
+
+//         {/* Categories Section */}
+//         <div className="categories-section">
+//           <div className="category-grid-wrapper" style={{ width: `${visibleCount * categoryCardWidth}px` }}>
+//             <div className="category-grid" ref={categoryGridRef} style={{ transform: `translateX(-${categoryIndex * categoryCardWidth}px)`, transition: 'transform 0.5s ease-in-out' }}>
+//               {extendedCategoryCards.map((card, index) => (
+//                 <div className="category-card" key={index}>
+//                   <div className="category-image">
+//                     <img src={card.src} alt={card.title} />
+//                   </div>
+//                   <p className="category-title">{card.title}</p>
+//                 </div>
+//               ))}
 //             </div>
-//             <div className="fabric-card">
-//               <div className="fabric-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/04/6-300x300.png"
-//                   alt="Cotton"
-//                 />
-//               </div>
-//               <p className="fabric-title">Cotton</p>
+//           </div>
+//         </div>
+
+//         {/* Explore by Fabrics Section */}
+//         <div className="fabrics-section">
+//           <h2 className="fabrics-title">Explore by Fabrics</h2>
+//           <div className="fabric-grid-wrapper" style={{ width: `${visibleCount * fabricCardWidth}px` }}>
+//             <div className="fabric-grid" ref={fabricGridRef} style={{ transform: `translateX(-${fabricIndex * fabricCardWidth}px)`, transition: 'transform 0.5s ease-in-out' }}>
+//               {extendedFabricCards.map((card, index) => (
+//                 <div className="fabric-card" key={index}>
+//                   <div className="fabric-image">
+//                     <img src={card.src} alt={card.title} />
+//                   </div>
+//                   <p className="fabric-title">{card.title}</p>
+//                 </div>
+//               ))}
 //             </div>
-//             <div className="fabric-card">
-//               <div className="fabric-image">
-//                 <img
-//                   src="https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png"
-//                   alt="Georgette"
-//                 />
-//               </div>
-//               <p className="fabric-title">Georgette</p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default HomeCategoryAndSubcategoryPage;
+
+
+
+// import React, { useEffect, useState, useRef } from 'react';
+// import axios from 'axios';
+// import "../../index.css";
+
+// const HomeCategoryAndSubcategoryPage = () => {
+//   const categoryGridRef = useRef(null);
+//   const fabricGridRef = useRef(null);
+//   const visibleCount = 4; // Number of items to show at a time
+
+//   // State for API data
+//   const [categories, setCategories] = useState([]);
+//   const [products, setProducts] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   // State for carousel
+//   const [categoryIndex, setCategoryIndex] = useState(0);
+//   const [fabricIndex, setFabricIndex] = useState(0);
+//   const [categoryCardWidth, setCategoryCardWidth] = useState(0);
+//   const [fabricCardWidth, setFabricCardWidth] = useState(0);
+
+//   // Fallback images
+//   const fallbackCategoryImage = "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png";
+//   const fallbackFabricImage = "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png";
+
+//   // Fetch categories and products
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         setLoading(true);
+//         const [categoriesRes, productsRes] = await Promise.all([
+//           axios.get("http://localhost:8080/category"),
+//           axios.get("http://localhost:8080/product"),
+//         ]);
+//         console.log("Categories API Response:", categoriesRes.data);
+//         console.log("Products API Response:", productsRes.data);
+//         setCategories(categoriesRes.data);
+//         setProducts(productsRes.data);
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//         setError("Error fetching data");
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     fetchData();
+//   }, []);
+
+//   // Prepare category cards
+//   const categoryCards = categories.map(category => {
+//     // Find a product with this category
+//     const productWithCategory = products.find(
+//       product => product.category?.name === category.name && product.images && product.images.length > 0
+//     );
+//     const imageUrl = productWithCategory && productWithCategory.images[0]
+//       ? productWithCategory.images[0]
+//       : fallbackCategoryImage;
+//     console.log(`Category: ${category.name}, Image: ${imageUrl}`);
+//     return {
+//       src: imageUrl,
+//       title: category.name || "Unnamed Category"
+//     };
+//   });
+//   const extendedCategoryCards = [...categoryCards, ...categoryCards.slice(0, visibleCount)];
+
+//   // Prepare fabric cards
+//   const uniqueFabrics = [...new Set(products.map(product => product.fabric).filter(fabric => fabric && fabric !== "No fabric specified"))];
+//   const fabricCards = uniqueFabrics.map(fabric => {
+//     const productWithFabric = products.find(
+//       product => product.fabric === fabric && product.images && product.images.length > 0
+//     );
+//     const imageUrl = productWithFabric && productWithFabric.images[0]
+//       ? productWithFabric.images[0]
+//       : fallbackFabricImage;
+//     console.log(`Fabric: ${fabric}, Image: ${imageUrl}`);
+//     return {
+//       src: imageUrl,
+//       title: fabric
+//     };
+//   });
+//   const extendedFabricCards = [...fabricCards, ...fabricCards.slice(0, visibleCount)];
+
+//   // Update card widths
+//   useEffect(() => {
+//     const updateWidths = () => {
+//       if (categoryGridRef.current && categoryGridRef.current.children[0]) {
+//         const card = categoryGridRef.current.children[0];
+//         const style = getComputedStyle(card);
+//         const width = card.offsetWidth + parseFloat(style.marginRight);
+//         setCategoryCardWidth(width);
+//       }
+//       if (fabricGridRef.current && fabricGridRef.current.children[0]) {
+//         const card = fabricGridRef.current.children[0];
+//         const style = getComputedStyle(card);
+//         const width = card.offsetWidth + parseFloat(style.marginRight);
+//         setFabricCardWidth(width);
+//       }
+//     };
+
+//     updateWidths();
+//     window.addEventListener('resize', updateWidths);
+//     return () => window.removeEventListener('resize', updateWidths);
+//   }, [categories, fabricCards]);
+
+//   // Carousel auto-scroll
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCategoryIndex((prev) => {
+//         const next = prev + 1;
+//         return next >= categoryCards.length ? 0 : next;
+//       });
+//       setFabricIndex((prev) => {
+//         const next = prev + 1;
+//         return next >= fabricCards.length ? 0 : next;
+//       });
+//     }, 3000); // Advance every 3 seconds
+
+//     return () => clearInterval(interval);
+//   }, [categoryCards.length, fabricCards.length]);
+
+//   if (loading) {
+//     return <div className="text-center py-5">Loading...</div>;
+//   }
+
+//   if (error) {
+//     return <div className="text-center text-danger py-5">{error}</div>;
+//   }
+
+//   return (
+//     <div className="page-wrapper">
+//       <div className="content-container">
+//         {/* Header Section */}
+//         <div className="header-section">
+//           <h1 className="main-slogan">
+//             We bring <span className="highlight">Elegance</span> to your wardrobe
+//           </h1>
+//         </div>
+
+//         {/* Categories Section */}
+//         <div className="categories-section">
+//           {/* <h2 className="categories-title">Explore by Categories</h2> */}
+//           <div className="category-grid-wrapper" style={{ width: `${visibleCount * categoryCardWidth}px` }}>
+//             <div className="category-grid" ref={categoryGridRef} style={{ transform: `translateX(-${categoryIndex * categoryCardWidth}px)`, transition: 'transform 0.5s ease-in-out' }}>
+//               {extendedCategoryCards.map((card, index) => (
+//                 <div className="category-card" key={index}>
+//                   <div className="category-image">
+//                     <img src={card.src} alt={card.title} onError={(e) => { e.target.src = fallbackCategoryImage; }} />
+//                   </div>
+//                   <p className="category-title">{card.title}</p>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Explore by Fabrics Section */}
+//         <div className="fabrics-section">
+//           <h2 className="fabrics-title">Explore by Fabrics</h2>
+//           <div className="fabric-grid-wrapper" style={{ width: `${visibleCount * fabricCardWidth}px` }}>
+//             <div className="fabric-grid" ref={fabricGridRef} style={{ transform: `translateX(-${fabricIndex * fabricCardWidth}px)`, transition: 'transform 0.5s ease-in-out' }}>
+//               {extendedFabricCards.map((card, index) => (
+//                 <div className="fabric-card" key={index}>
+//                   <div className="fabric-image">
+//                     <img src={card.src} alt={card.title} onError={(e) => { e.target.src = fallbackFabricImage; }} />
+//                   </div>
+//                   <p className="fabric-title">{card.title}</p>
+//                 </div>
+//               ))}
 //             </div>
 //           </div>
 //         </div>
@@ -374,44 +459,90 @@
 
 
 import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import "../../index.css";
 
 const HomeCategoryAndSubcategoryPage = () => {
   const categoryGridRef = useRef(null);
   const fabricGridRef = useRef(null);
   const visibleCount = 4; // Number of items to show at a time
+  const navigate = useNavigate();
 
-  // Categories data
-  const categoryCards = [
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/02/WhatsApp-Image-2023-12-14-at-2.04.25-PM-5-700x1022-1-600x876.jpg", title: "Hijabs" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/02/IMG_2043-scaled-1.jpg", title: "Prayer Collections" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-12-at-15.29.20_4b1d513d-scaled.jpg", title: "Abayas" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png", title: "Accessories" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png", title: "Accessories 2" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png", title: "Accessories 3" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png", title: "Accessories 4" }
-  ];
-  const extendedCategoryCards = [...categoryCards, ...categoryCards.slice(0, visibleCount)];
+  // State for API data
+  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  // State for carousel
   const [categoryIndex, setCategoryIndex] = useState(0);
-  const [categoryCardWidth, setCategoryCardWidth] = useState(0);
-
-  // Fabrics data
-  const fabricCards = [
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/04/9-300x300.png", title: "Organza" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/04/Untitled-design-35-300x300.png", title: "Jersey" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/04/6-300x300.png", title: "Cotton" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette 2" },
-    { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette 3" },
-    // { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette 4" },
-    // { src: "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png", title: "Georgette 5" }
-  ];
-  const extendedFabricCards = [...fabricCards, ...fabricCards.slice(0, visibleCount)];
-
   const [fabricIndex, setFabricIndex] = useState(0);
+  const [categoryCardWidth, setCategoryCardWidth] = useState(0);
   const [fabricCardWidth, setFabricCardWidth] = useState(0);
 
+  // Fallback images
+  const fallbackCategoryImage = "https://comfobynoor.in/wp-content/uploads/2025/01/accessories_22_28-1-removebg-preview-300x300.png";
+  const fallbackFabricImage = "https://comfobynoor.in/wp-content/uploads/2025/04/7-300x300.png";
+
+  // Fetch categories and products
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const [categoriesRes, productsRes] = await Promise.all([
+          axios.get("http://localhost:8080/category"),
+          axios.get("http://localhost:8080/product"),
+        ]);
+        console.log("Categories API Response:", categoriesRes.data);
+        console.log("Products API Response:", productsRes.data);
+        setCategories(categoriesRes.data);
+        setProducts(productsRes.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setError("Error fetching data");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  // Prepare category cards
+  const categoryCards = categories.map(category => {
+    const productWithCategory = products.find(
+      product => product.category?.name === category.name && product.images && product.images.length > 0
+    );
+    const imageUrl = productWithCategory && productWithCategory.images[0]
+      ? productWithCategory.images[0]
+      : fallbackCategoryImage;
+    console.log(`Category: ${category.name}, Image: ${imageUrl}`);
+    return {
+      src: imageUrl,
+      title: category.name || "Unnamed Category",
+      id: category._id // Store category ID for navigation
+    };
+  });
+  const extendedCategoryCards = [...categoryCards, ...categoryCards.slice(0, visibleCount)];
+
+  // Prepare fabric cards
+  const uniqueFabrics = [...new Set(products.map(product => product.fabric).filter(fabric => fabric && fabric !== "No fabric specified"))];
+  const fabricCards = uniqueFabrics.map(fabric => {
+    const productWithFabric = products.find(
+      product => product.fabric === fabric && product.images && product.images.length > 0
+    );
+    const imageUrl = productWithFabric && productWithFabric.images[0]
+      ? productWithFabric.images[0]
+      : fallbackFabricImage;
+    console.log(`Fabric: ${fabric}, Image: ${imageUrl}`);
+    return {
+      src: imageUrl,
+      title: fabric
+    };
+  });
+  const extendedFabricCards = [...fabricCards, ...fabricCards.slice(0, visibleCount)];
+
+  // Update card widths
   useEffect(() => {
     const updateWidths = () => {
       if (categoryGridRef.current && categoryGridRef.current.children[0]) {
@@ -431,8 +562,9 @@ const HomeCategoryAndSubcategoryPage = () => {
     updateWidths();
     window.addEventListener('resize', updateWidths);
     return () => window.removeEventListener('resize', updateWidths);
-  }, []);
+  }, [categories, fabricCards]);
 
+  // Carousel auto-scroll
   useEffect(() => {
     const interval = setInterval(() => {
       setCategoryIndex((prev) => {
@@ -448,6 +580,24 @@ const HomeCategoryAndSubcategoryPage = () => {
     return () => clearInterval(interval);
   }, [categoryCards.length, fabricCards.length]);
 
+  // Handle category card click
+  const handleCategoryClick = (categoryName) => {
+    navigate(`/shop?category=${encodeURIComponent(categoryName)}`);
+  };
+
+  // Handle fabric card click
+  const handleFabricClick = (fabric) => {
+    navigate(`/shop?fabric=${encodeURIComponent(fabric)}`);
+  };
+
+  if (loading) {
+    return <div className="text-center py-5">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center text-danger py-5">{error}</div>;
+  }
+
   return (
     <div className="page-wrapper">
       <div className="content-container">
@@ -460,12 +610,17 @@ const HomeCategoryAndSubcategoryPage = () => {
 
         {/* Categories Section */}
         <div className="categories-section">
+          {/* <h2 className="categories-title">Explore by Categories</h2> */}
           <div className="category-grid-wrapper" style={{ width: `${visibleCount * categoryCardWidth}px` }}>
             <div className="category-grid" ref={categoryGridRef} style={{ transform: `translateX(-${categoryIndex * categoryCardWidth}px)`, transition: 'transform 0.5s ease-in-out' }}>
               {extendedCategoryCards.map((card, index) => (
-                <div className="category-card" key={index}>
+                <div
+                  className="category-card cursor-pointer"
+                  key={index}
+                  onClick={() => handleCategoryClick(card.title)}
+                >
                   <div className="category-image">
-                    <img src={card.src} alt={card.title} />
+                    <img src={card.src} alt={card.title} onError={(e) => { e.target.src = fallbackCategoryImage; }} />
                   </div>
                   <p className="category-title">{card.title}</p>
                 </div>
@@ -475,14 +630,18 @@ const HomeCategoryAndSubcategoryPage = () => {
         </div>
 
         {/* Explore by Fabrics Section */}
-        <div className="fabrics-section">
+        <div className="fabrics-section ">
           <h2 className="fabrics-title">Explore by Fabrics</h2>
           <div className="fabric-grid-wrapper" style={{ width: `${visibleCount * fabricCardWidth}px` }}>
             <div className="fabric-grid" ref={fabricGridRef} style={{ transform: `translateX(-${fabricIndex * fabricCardWidth}px)`, transition: 'transform 0.5s ease-in-out' }}>
               {extendedFabricCards.map((card, index) => (
-                <div className="fabric-card" key={index}>
-                  <div className="fabric-image">
-                    <img src={card.src} alt={card.title} />
+                <div
+                  className="fabric-card cursor-pointer"
+                  key={index}
+                  onClick={() => handleFabricClick(card.title)}
+                >
+                  <div className="fabric-image ">
+                    <img className='object-cover' src={card.src} alt={card.title} onError={(e) => { e.target.src = fallbackFabricImage; }} />
                   </div>
                   <p className="fabric-title">{card.title}</p>
                 </div>

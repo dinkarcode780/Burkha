@@ -36,5 +36,6 @@ export const getProductByBarcodes = async (barcode) => API.get(`products/barcode
 
 export const scanProduct = async (barcodeData) =>  API.put(`${API_URL}/purchase/scan`, barcodeData);
 
+// export const slidder = () => API.get("/slider/users/getSlidder");
 
 

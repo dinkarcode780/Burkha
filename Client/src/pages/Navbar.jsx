@@ -19,6 +19,8 @@ import {
   ClipboardList,
   BarChart2,
   Truck,
+  Sliders,
+  Pencil,
 } from "lucide-react";
 
 const Sidebar = () => {
@@ -64,6 +66,18 @@ const Sidebar = () => {
         { to: "/categories", label: "All Categories", icon: List },
         { to: "/subcategories", label: "Sub-Categories", icon: Grid },
         { to: "/create", label: "Add Product", icon: PlusCircle },
+      ],
+    },
+
+
+
+    {
+      label: "Slider",
+      icon: Sliders,
+      subItems: [
+        { to: "/allslidder", label: "All Slider", icon: List },
+      { to: "/add-slidder", label: "Add Slider", icon: PlusCircle },
+      { to: "/update-slidder", label: "Update Slider", icon: Pencil },
       ],
     },
 

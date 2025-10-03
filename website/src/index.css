@@ -1,9 +1,10 @@
+
+
 .product-card img{
 height: 200px !important;
 object-fit: cover;
 object-position: top;
 }
-
 
 
 .product-details__thumb-slider {
@@ -14,7 +15,7 @@ object-position: top;
 
 /* ----------------------login page css */
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
+   background: rgba(255, 255, 255, 0.85); 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -533,7 +534,11 @@ body {
   font-family: Arial, sans-serif;
   min-height: 100vh;
   margin: 0;
+  /* background-color: slateblue; */
 }
+
+
+
 
 .page-wrapper {
   min-height: 100vh;
@@ -622,6 +627,7 @@ body {
 /* Explore by Fabrics Section */
 .fabrics-section {
   padding: 2.5rem 0; /* 40px */
+  /* background-color: sandybrown; */
 }
 
 .fabrics-title {
@@ -644,12 +650,15 @@ body {
 .fabric-grid {
   display: flex;
   flex-wrap: nowrap;
+  /* background-color: sienna; */
+    /* min-width: 200vw; */
 }
 
 .fabric-card {
   flex: 0 0 auto;
   text-align: center;
   margin-right: 1.5rem; /* 24px gap */
+  /* background-color: #0d6efd; */
 }
 
 .fabric-image {
@@ -694,3 +703,12 @@ body {
     width: calc(100% - 3rem); /* Adjust for padding */
   }
 }
+
+
+
+
+/* .sale{
+  width: 100%;;
+  height: 5vh;
+  background-color: red;
+} */

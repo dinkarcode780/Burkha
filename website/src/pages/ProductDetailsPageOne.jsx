@@ -1259,11 +1259,11 @@ const ProductDetailsOne = () => {
                               },
                               largeImage: {
                                 src: mainMedia,
-                                width: 970,
-                                height: 1600,
+                                width: 700,
+                                height: 1800,
                               },
                               enlargedImageContainerDimensions: {
-                                width: 970, // zoom area width (like right-side image)
+                                width: 700, // zoom area width (like right-side image)
                                 height: 650, // zoom area height
                               },
                               enlargedImagePosition: "beside", // keep zoom to the right
