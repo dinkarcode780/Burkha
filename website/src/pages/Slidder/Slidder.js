@@ -111,7 +111,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import "../../index.css"; // Adjust path to go up two directories
+import "../../index.css"; 
 
 const Slidder = () => {
   const [images, setImages] = useState([]);

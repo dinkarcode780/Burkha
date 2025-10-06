@@ -340,6 +340,7 @@ h6{
   background: #000; /* Dark background */
   color: #fff; /* White text for contrast */
   overflow: hidden;
+  top: 20px;
 }
 
 .slider {
@@ -712,3 +713,47 @@ body {
   height: 5vh;
   background-color: red;
 } */
+
+
+.offer-banner {
+  background-color: #800000;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 40px; /* Ensure minimum height */
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 15s linear infinite; /* Increased duration for better visibility */
+  white-space: nowrap;
+  min-width: 300%; /* Increased to ensure all content fits */
+}
+
+.marquee-content span {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); } /* Move one-third for triple duplication */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .marquee-content span {
+    font-size: 12px;
+    margin: 0 30px; /* Reduced margin for more items */
+  }
+  .marquee-content {
+    animation: marquee 12s linear infinite; /* Adjusted duration */
+    min-width: 400%; /* Increased to fit more on mobile */
+  }
+  .offer-banner {
+    min-height: 30px;
+  }
+}

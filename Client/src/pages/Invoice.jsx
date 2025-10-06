@@ -111,7 +111,7 @@ const Invoice = () => {
   ];
 
   return (
-    <div className="max-w-6xl  py-8">
+    <div className="max-w-7xl  py-8 ml-[8.5vw]">
       <div className="bg-white rounded-lg shadow-md">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-800">Pending Payments</h2>

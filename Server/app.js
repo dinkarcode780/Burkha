@@ -23,7 +23,7 @@ const CheckRoute = require("./routes/Checkoutroute");
 const PaymentRoute = require("./routes/paymentRoute");
 const popupRoute = require("./routes/popupRoute");
 const slidderRoute = require("./routes/slidderRoute");
-
+const salleofferRoute = require("./routes/salleofferRoute");
 
 // db connect
 dbconnect();
@@ -97,6 +97,8 @@ app.use("/paymentuser", PaymentRoute);
 app.use("/popup",popupRoute);
 
 app.use("/slidder",slidderRoute);
+
+app.use("/salleoffer",salleofferRoute);
 
 
 app.listen(8080, () => {

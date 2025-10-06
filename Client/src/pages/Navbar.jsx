@@ -21,6 +21,7 @@ import {
   Truck,
   Sliders,
   Pencil,
+  Gift,
 } from "lucide-react";
 
 const Sidebar = () => {
@@ -76,8 +77,19 @@ const Sidebar = () => {
       icon: Sliders,
       subItems: [
         { to: "/allslidder", label: "All Slider", icon: List },
-      { to: "/add-slidder", label: "Add Slider", icon: PlusCircle },
-      { to: "/update-slidder", label: "Update Slider", icon: Pencil },
+      // { to: "/add-slidder", label: "Add Slider", icon: PlusCircle },
+      // { to: "/update-slidder", label: "Update Slider", icon: Pencil },
+      ],
+    },
+
+
+    {
+      label: "Offers",
+      icon: Gift,
+      subItems: [
+        { to: "/salleoffer", label: "Sale Offers", icon: List },
+      // { to: "/add-slidder", label: "Add Slider", icon: PlusCircle },
+      // { to: "/update-slidder", label: "Update Slider", icon: Pencil },
       ],
     },
 

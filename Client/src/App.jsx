@@ -20,7 +20,8 @@ import {
   UserPlus,
   BarChart2,
   SlidersHorizontal,
-  Pencil
+  Pencil,
+  Gift
 } from "lucide-react";
 import { MdOutlinePayments } from "react-icons/md";
 import ScanQRCode from "./pages/ScanQRCode";
@@ -65,6 +66,7 @@ import Catalogue from "./pages/Catelouge";
 import SlidderPage from "./pages/ShowAllSlider/SlidderPage";
 import AddSlidderPage from "./pages/ShowAllSlider/AddSlidderPage";
 import UpdateSlidderPage from "./pages/ShowAllSlider/UpdateSlidderPage";
+import OfferSallePage from "./pages/OfferSalle/OfferSallePage";
 
 
 
@@ -131,12 +133,23 @@ function AppContent({ onLogout }) {
           icon: SlidersHorizontal,
           subItems: [
             { to: "/allslidder", label: "All Slider", icon: List },
-            // { to: "/subcategories", label: "Sub-Categories", icon: Grid },
-            { to: "/add-slidde", label: "Add Slider", icon: PlusCircle },
-            { to: "/update-slidder", label: "Update Slider", icon: Pencil },
+            // { to: "/add-slidde", label: "Add Slider", icon: PlusCircle },
+            // { to: "/update-slidder", label: "Update Slider", icon: Pencil },
           ],
         },
     
+
+        {
+          label: "Offers",
+          icon: Gift,
+          subItems: [
+            { to: "/salleoffer", label: "Salle Offers", icon: List },
+            // { to: "/add-slidde", label: "Add Slider", icon: PlusCircle },
+            // { to: "/update-slidder", label: "Update Slider", icon: Pencil },
+          ],
+        },
+    
+
 
     {
       label: "View Products",
@@ -429,6 +442,9 @@ function AppContent({ onLogout }) {
               <Route path="/allslidder" element={<SlidderPage/>}/>
               <Route path="/add-slidder" element={<AddSlidderPage />} />
               <Route path="/update-slidder" element={<UpdateSlidderPage />}/>
+
+              <Route path="/salleoffer" element={<OfferSallePage />}/>
+
              
             </Routes>
           </div>
