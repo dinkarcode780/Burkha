@@ -28,7 +28,7 @@ const ProductDetailsOne = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/product/${id}`);
+        const response = await axios.get(`https://backend.umairabaya.com/product/${id}`);
         setProduct(response.data);
         if (response.data.size?.length > 0) {
           setSelectedSize(response.data.size[0]);

@@ -20,7 +20,7 @@ const testRegistration = async () => {
 
   try {
     console.log('Testing registration with data:', testData);
-    const response = await axios.post('http://localhost:8080/user/register', testData);
+    const response = await axios.post('https://backend.umairabaya.com/user/register', testData);
     console.log('✅ Registration successful:', response.data);
   } catch (error) {
     console.error('❌ Registration failed:', error.response?.data || error.message);

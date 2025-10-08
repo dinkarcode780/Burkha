@@ -23,7 +23,7 @@ const RecommendedOne = () => {
     }
   }, []);
 
-  const api = "http://localhost:8080/product/allproduct";
+  const api = "https://backend.umairabaya.com/product/allproduct";
 
   useEffect(() => {
   const fetchCourses = async () => {
@@ -66,7 +66,7 @@ const RecommendedOne = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/category");
+        const res = await axios.get("https://backend.umairabaya.com/category");
         setCategories(res.data);
       } catch (error) {
         toast.error("Error fetching categories");

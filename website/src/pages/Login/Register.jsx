@@ -35,7 +35,7 @@ const Registration = () => {
     onSubmit: async (values) => {
       try {
         const response = await axios.post(
-          `http://localhost:8080/auth/register`,
+          `https://backend.umairabaya.com/auth/register`,
           values
         );
         console.log("Registration successful:", response.data);

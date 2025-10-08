@@ -238,6 +238,65 @@ const deleteUser = async (req, res) => {
 
 
 
+
+async function sendSMS({ to, message }) {
+  console.log(`SMS sent to ${to}: ${message}`);
+}
+
+const Login = async (req, res) => {
+  const { email, password, mobile1 } = req.body;
+
+ 
+  if ((email && mobile1) || (!email && !mobile1) || !password) {
+    return res.status(400).json({ error: "Provide either email and password or mobile number and password, but not both." });
+  }
+
+  try {
+    let user;
+    if (email) {
+ 
+      user = await UserModel.findOne({ email });
+      if (!user) {
+        return res.status(401).json({ error: "Invalid email or password." });
+      }
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return res.status(401).json({ error: "Invalid email or password." });
+      }
+     
+      await sendMailer({ to: user.email, subject: "Login Successful" });
+    } else if (mobile1) {
+    
+      user = await UserModel.findOne({ mobile1 });
+      if (!user) {
+        return res.status(401).json({ error: "Invalid mobile number or password." });
+      }
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return res.status(401).json({ error: "Invalid mobile number or password." });
+      }
+      await sendSMS({
+        to: mobile1,
+        message: "You have successfully logged in to Burkha!"
+      });
+    }
+
+
+    const token = jwt.sign({ userId: user._id }, "fiuhfulhffhkjhfskjhi", {
+      expiresIn: "7d",
+    });
+
+    res.status(200).json({
+      message: "Login successful",
+      token,
+      user: { ...user._doc, password: undefined },
+    });
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
 // const Login = async (req, res) => {
 //   const { email, password, mobile1 } = req.body;
 
@@ -254,6 +313,13 @@ const deleteUser = async (req, res) => {
 //       if (!user) {
 //         return res.status(401).json({ error: "Invalid mobile number." });
 //       }
+//       // Send SMS login message
+//       await sendSMS({
+//         to: mobile1,
+//         message: "You have successfully logged in to Burkha!"
+//       });
+//       // Send email login message (using user's email from DB)
+//       await sendMailer({ to: user.email, subject: "login" });
 //     } else {
 //       // Login with email and password
 //       user = await UserModel.findOne({ email });
@@ -264,14 +330,14 @@ const deleteUser = async (req, res) => {
 //       if (!isMatch) {
 //         return res.status(401).json({ error: "Invalid email or password." });
 //       }
+//       // Send email login message
+//       await sendMailer({ to: user.email, subject: "login" });
 //     }
 
 //     // Create JWT token
 //     const token = jwt.sign({ userId: user._id }, "fiuhfulhffhkjhfskjhi", {
 //       expiresIn: "7d",
 //     });
-
-//     await sendMailer({ to: user.email, subject: "login" });
 
 //     res.status(200).json({
 //       message: "Login successful",
@@ -283,63 +349,6 @@ const deleteUser = async (req, res) => {
 //     res.status(500).json({ error: "Internal server error" });
 //   }
 // };
-
-async function sendSMS({ to, message }) {
-  console.log(`SMS sent to ${to}: ${message}`);
-}
-
-const Login = async (req, res) => {
-  const { email, password, mobile1 } = req.body;
-
-  // At least one identifier must be provided
-  if ((!email || !password) && !mobile1) {
-    return res.status(400).json({ error: "Provide either mobile number or email and password." });
-  }
-
-  try {
-    let user;
-    if (mobile1) {
-      // Login with mobile number (no password required)
-      user = await UserModel.findOne({ mobile1 });
-      if (!user) {
-        return res.status(401).json({ error: "Invalid mobile number." });
-      }
-      // Send SMS login message
-      await sendSMS({
-        to: mobile1,
-        message: "You have successfully logged in to Burkha!"
-      });
-      // Send email login message (using user's email from DB)
-      await sendMailer({ to: user.email, subject: "login" });
-    } else {
-      // Login with email and password
-      user = await UserModel.findOne({ email });
-      if (!user) {
-        return res.status(401).json({ error: "Invalid email or password." });
-      }
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) {
-        return res.status(401).json({ error: "Invalid email or password." });
-      }
-      // Send email login message
-      await sendMailer({ to: user.email, subject: "login" });
-    }
-
-    // Create JWT token
-    const token = jwt.sign({ userId: user._id }, "fiuhfulhffhkjhfskjhi", {
-      expiresIn: "7d",
-    });
-
-    res.status(200).json({
-      message: "Login successful",
-      token,
-      user: { ...user._doc, password: undefined },
-    });
-  } catch (error) {
-    console.error("Login error:", error);
-    res.status(500).json({ error: "Internal server error" });
-  }
-};
 
 // Get all users (excluding passwords)
 const getAllUsers = async (req, res) => {

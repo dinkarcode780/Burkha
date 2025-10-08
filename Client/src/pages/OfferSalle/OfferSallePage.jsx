@@ -12,7 +12,7 @@ const OfferSallePage = () => {
   useEffect(() => {
     const fetchOffers = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/salleoffer/users/getAllSaleOffers');
+        const response = await axios.get('https://backend.umairabaya.com/salleoffer/users/getAllSaleOffers');
         if (response.data && Array.isArray(response.data.data)) {
           setOffers(response.data.data);
         } else {
@@ -30,7 +30,7 @@ const OfferSallePage = () => {
   const handleCreateOffer = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/salleoffer/admin/createSaleOffer', {
+      const response = await axios.post('https://backend.umairabaya.com/salleoffer/admin/createSaleOffer', {
         offerTitle: [{ title: newOfferTitle }],
       });
       if (response.data.data) {
@@ -48,7 +48,7 @@ const handleUpdateOffer = async () => {
   try {
     const { offer, offerTitleId } = updateDialog;
     console.log('Sending update request with:', { salleId: offer._id, offerTitleId, newTitle: updatedTitle });
-    const response = await axios.put('http://localhost:8080/salleoffer/admin/updateSalleOffer', {
+    const response = await axios.put('https://backend.umairabaya.com/salleoffer/admin/updateSalleOffer', {
       salleId: offer._id,
       offerTitleId: offerTitleId,
       newTitle: updatedTitle,
@@ -70,7 +70,7 @@ const handleUpdateOffer = async () => {
   // Delete offer
   const handleDeleteOffer = async (salleId) => {
     try {
-      await axios.delete(`http://localhost:8080/salleoffer/admin/deleteSaleOffer?salleId=${salleId}`);
+      await axios.delete(`https://backend.umairabaya.com/salleoffer/admin/deleteSaleOffer?salleId=${salleId}`);
       setOffers(offers.filter((offer) => offer._id !== salleId));
     } catch (error) {
       console.error('Error deleting offer:', error);

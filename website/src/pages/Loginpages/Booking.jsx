@@ -31,7 +31,7 @@ const PaymentHistory = () => {
   //     try {
   //       setIsLoading(true);
   //       const response = await axios.get(
-  //         `http://localhost:8080/paymentuser/payments/${userId}`
+  //         `https://backend.umairabaya.com/paymentuser/payments/${userId}`
   //       );
   //       setPayments(response.data.data);
   //     } catch (error) {
@@ -57,7 +57,7 @@ const PaymentHistory = () => {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        `http://localhost:8080/paymentuser/payments/${userId}`
+        `https://backend.umairabaya.com/paymentuser/payments/${userId}`
       );
       console.log("API Response:", response.data); 
 
@@ -141,7 +141,7 @@ const PaymentHistory = () => {
       });
 
       const response = await axios.get(
-        `http://localhost:8080/paymentuser/downloadinvoice/${orderId}`,
+        `https://backend.umairabaya.com/paymentuser/downloadinvoice/${orderId}`,
         {
           responseType: "blob",
         }

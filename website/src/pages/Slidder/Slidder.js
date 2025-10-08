@@ -124,7 +124,7 @@ const Slidder = () => {
   useEffect(() => {
     const fetchSliders = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/slidder/users/getSliddder');
+        const response = await axios.get('https://backend.umairabaya.com/slidder/users/getSliddder');
         if (response.data.success) {
           // Use homeImage URLs from the first slider's images array
           if (response.data.data.length > 0 && response.data.data[0].images) {

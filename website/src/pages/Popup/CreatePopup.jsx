@@ -493,7 +493,7 @@ const CreatePopup = ({ isOpen, onClose }) => {
     country: '',
   });
 
-  // Simple list of countries for detection (expand as needed)
+ 
   const countryList = ['India', 'USA', 'UK', 'Canada', 'Australia', 'Jersey', 'Cotton']; // Example countries
 
   const handleChange = (e) => {

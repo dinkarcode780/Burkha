@@ -5,7 +5,7 @@
 
 // const BannerOne = () => {
 //      const [banners, setBanners] = useState([]);
-//   const api = 'http://localhost:8080/banner/alldisplay';
+//   const api = 'https://backend.umairabaya.com/banner/alldisplay';
 
 //   // Load banners
 //   const loadData = async () => {
@@ -125,7 +125,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const BannerOne = () => {
   const [banners, setBanners] = useState([]);
-  const api = "http://localhost:8080/banner/alldisplay";
+  const api = "https://backend.umairabaya.com/banner/alldisplay";
 
   // Load banners
   const loadData = async () => {

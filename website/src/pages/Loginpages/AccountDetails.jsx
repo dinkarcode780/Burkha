@@ -54,7 +54,7 @@ const AccountDetails = () => {
     try {
       const token = localStorage.getItem('token'); // if needed
       const response = await axios.put(
-  `http://localhost:8080/user/users/${formData.id}`, // ✅ Corrected localhost spelling
+  `https://backend.umairabaya.com/user/users/${formData.id}`, // ✅ Corrected localhost spelling
   {
     firstName: formData.firstName,
     address: formData.address,

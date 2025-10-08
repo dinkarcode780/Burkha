@@ -10,7 +10,7 @@
 //   useEffect(() => {
 //     const fetchSliders = async () => {
 //       try {
-//         const response = await axios.get('http://localhost:8080/slidder/users/getSliddder');
+//         const response = await axios.get('https://backend.umairabaya.com/slidder/users/getSliddder');
 //         if (response.data.success) {
 //           setSliders(response.data.data);
 //         } else {
@@ -30,7 +30,7 @@
 //   const handleDelete = async (slidderId) => {
 //     if (!window.confirm('Are you sure you want to delete this slider?')) return;
 //     try {
-//       const response = await axios.delete(`http://localhost:8080/slidder/admin/deleteSlidder?slidderId=${slidderId}`);
+//       const response = await axios.delete(`https://backend.umairabaya.com/slidder/admin/deleteSlidder?slidderId=${slidderId}`);
 //       if (response.data.success) {
 //         setSliders(sliders.filter((slider) => slider._id !== slidderId));
 //         alert('Slider deleted successfully');
@@ -120,7 +120,7 @@
 //   useEffect(() => {
 //     const fetchSliders = async () => {
 //       try {
-//         const response = await axios.get('http://localhost:8080/slidder/users/getSliddder');
+//         const response = await axios.get('https://backend.umairabaya.com/slidder/users/getSliddder');
 //         if (response.data.success) {
 //           setSliders(response.data.data);
 //         } else {
@@ -147,7 +147,7 @@
 //     newSlider.images.forEach((file) => formData.append('images', file));
 
 //     try {
-//       const response = await axios.post('http://localhost:8080/slidder/admin/createSlidder', formData, {
+//       const response = await axios.post('https://backend.umairabaya.com/slidder/admin/createSlidder', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       if (response.data.success) {
@@ -167,7 +167,7 @@
 //   const handleDelete = async (slidderId, imageIndex) => {
 //     if (!window.confirm('Are you sure you want to delete this image?')) return;
 //     try {
-//       const response = await axios.delete(`http://localhost:8080/slidder/admin/deleteSlidder?slidderId=${slidderId}&index=${imageIndex}`);
+//       const response = await axios.delete(`https://backend.umairabaya.com/slidder/admin/deleteSlidder?slidderId=${slidderId}&index=${imageIndex}`);
 //       if (response.data.success) {
 //         setSliders(sliders.map((slider) =>
 //           slider._id === slidderId
@@ -204,7 +204,7 @@
 //     formData.append('images', file);
 
 //     try {
-//       const response = await axios.put('http://localhost:8080/slidder/admin/updateSlidder', formData, {
+//       const response = await axios.put('https://backend.umairabaya.com/slidder/admin/updateSlidder', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       if (response.data.success) {
@@ -324,7 +324,7 @@
 //   useEffect(() => {
 //     const fetchSliders = async () => {
 //       try {
-//         const response = await axios.get('http://localhost:8080/slidder/users/getSliddder');
+//         const response = await axios.get('https://backend.umairabaya.com/slidder/users/getSliddder');
 //         if (response.data.success) {
 //           setSliders(response.data.data);
 //         } else {
@@ -368,7 +368,7 @@
 //     newSlider.images.forEach((file) => formData.append('images', file));
 
 //     try {
-//       const response = await axios.post('http://localhost:8080/slidder/admin/createSlidder', formData, {
+//       const response = await axios.post('https://backend.umairabaya.com/slidder/admin/createSlidder', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       if (response.data.success) {
@@ -395,7 +395,7 @@
 //   const handleDelete = async (slidderId, imageIndex) => {
 //     if (!window.confirm('Are you sure you want to delete this image?')) return;
 //     try {
-//       const response = await axios.delete(`http://localhost:8080/slidder/admin/deleteSlidder?slidderId=${slidderId}&index=${imageIndex}`);
+//       const response = await axios.delete(`https://backend.umairabaya.com/slidder/admin/deleteSlidder?slidderId=${slidderId}&index=${imageIndex}`);
 //       if (response.data.success) {
 //         // Update the sliders state with the updated slider from the response
 //         setSliders(sliders.map((slider) =>
@@ -427,7 +427,7 @@
 //     formData.append('images', file);
 
 //     try {
-//       const response = await axios.put('http://localhost:8080/slidder/admin/updateSlidder', formData, {
+//       const response = await axios.put('https://backend.umairabaya.com/slidder/admin/updateSlidder', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       if (response.data.success) {
@@ -602,12 +602,15 @@ const SlidderPage = () => {
   const [error, setError] = useState(null);
   const [newSlider, setNewSlider] = useState({ images: [] });
   const fileInputRef = useRef(null);
-  const updateFileInputRef = useRef(null);
+  const updateFileInputRef = useRef(null); // Reintroduced ref for update input
+  const [updateFile, setUpdateFile] = useState(null); // State to hold update file
+  const [updateIndex, setUpdateIndex] = useState(null); // State to hold update index
+  const [updateSliderId, setUpdateSliderId] = useState(null); // State to hold slider ID for update
 
   useEffect(() => {
     const fetchSliders = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/slidder/users/getSliddder');
+        const response = await axios.get('https://backend.umairabaya.com/slidder/users/getSliddder');
         console.log('Fetch response:', response.data);
         if (response.data.success) {
           setSliders(response.data.data);
@@ -654,7 +657,7 @@ const SlidderPage = () => {
     newSlider.images.forEach((file) => formData.append('images', file));
 
     try {
-      const response = await axios.post('http://localhost:8080/slidder/admin/createSlidder', formData, {
+      const response = await axios.post('https://backend.umairabaya.com/slidder/admin/createSlidder', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       console.log('Create response:', response.data);
@@ -685,7 +688,7 @@ const SlidderPage = () => {
   const handleDelete = async (slidderId, imageIndex) => {
     if (!window.confirm('Are you sure you want to delete this image?')) return;
     try {
-      const response = await axios.delete(`http://localhost:8080/slidder/admin/deleteSlidder?slidderId=${slidderId}&index=${imageIndex}`);
+      const response = await axios.delete(`https://backend.umairabaya.com/slidder/admin/deleteSlidder?slidderId=${slidderId}&index=${imageIndex}`);
       if (response.data.success) {
         setSliders(sliders.map((slider) =>
           slider._id === slidderId ? response.data.data : slider
@@ -702,35 +705,48 @@ const SlidderPage = () => {
 
   const handleUpdateFileChange = (e, slidderId, imageIndex) => {
     const file = e.target.files[0];
-    handleUpdate(slidderId, imageIndex, file);
+    if (file) {
+      setUpdateFile(file); // Store the selected file
+      setUpdateSliderId(slidderId); // Store the slider ID
+      setUpdateIndex(imageIndex); // Store the image index
+      console.log('File selected for update:', file.name);
+    }
   };
 
-  const handleUpdate = async (slidderId, imageIndex, file) => {
-    if (!file) {
+  const handleUpdate = async () => {
+    if (!updateFile) {
       alert('Please select an image to update');
       return;
     }
+
     const formData = new FormData();
-    formData.append('slidderId', slidderId);
-    formData.append('index', imageIndex);
-    formData.append('images', file);
+    formData.append('slidderId', updateSliderId);
+    formData.append('index', updateIndex);
+    formData.append('images', updateFile);
 
     try {
-      const response = await axios.put('http://localhost:8080/slidder/admin/updateSlidder', formData, {
+      const response = await axios.put('https://backend.umairabaya.com/slidder/admin/updateSlidder', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
+      console.log('Update response:', response.data);
       if (response.data.success) {
         setSliders(sliders.map((slider) =>
-          slider._id === slidderId ? response.data.data : slider
+          slider._id === updateSliderId ? response.data.data : slider
         ));
-        if (updateFileInputRef.current) updateFileInputRef.current.value = '';
+        setUpdateFile(null); // Clear the update file state
+        setUpdateIndex(null); // Clear the update index
+        setUpdateSliderId(null); // Clear the slider ID
+        if (updateFileInputRef.current) {
+          updateFileInputRef.current.value = ''; // Clear the file input
+          console.log('File input cleared:', updateFileInputRef.current.value);
+        }
         alert('Image updated successfully');
       } else {
         alert(response.data.message);
       }
     } catch (err) {
       alert('Failed to update image');
-      console.error(err);
+      console.error('Update error:', err);
     }
   };
 
@@ -842,17 +858,18 @@ const SlidderPage = () => {
                         />
                         <div style={{ marginTop: '5px' }}>
                           <input
+                            key={`${slider._id}-${index}`} // Unique key to force reset
                             type="file"
                             onChange={(e) => handleUpdateFileChange(e, slider._id, index)}
-                            ref={updateFileInputRef}
+                            ref={updateFileInputRef} // Reattached ref
                             className="update-file-input"
                             style={{ marginBottom: '5px' }}
                           />
                           <button
-                            onClick={() => handleUpdate(slider._id, index, null)}
+                            onClick={handleUpdate}
                             className="update-button bg-blue-600 text-white py-1 px-2 rounded hover:bg-blue-700"
                             style={{ marginRight: '5px' }}
-                            disabled={!updateFileInputRef.current?.files?.length}
+                            disabled={!updateFile}
                           >
                             Update
                           </button>

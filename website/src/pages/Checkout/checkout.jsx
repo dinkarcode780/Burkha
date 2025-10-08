@@ -40,7 +40,7 @@ const CheckOut = () => {
       description: "Order Payment",
       handler: async (response) => {
         try {
-          const verifyURL = "http://localhost:8080/paymentuser/verify";
+          const verifyURL = "https://backend.umairabaya.com/paymentuser/verify";
           await axios.post(verifyURL, response);
 
           message.success("Payment successful!");
@@ -73,7 +73,7 @@ const CheckOut = () => {
 
     try {
       setIsLoading(true);
-      const orderURL = "http://localhost:8080/paymentuser/orders";
+      const orderURL = "https://backend.umairabaya.com/paymentuser/orders";
       const { data } = await axios.post(orderURL, {
         amount: totalAmount,
         productname: productName,

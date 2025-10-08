@@ -22,7 +22,7 @@ const ShopSection = ({ subcategoryId, searchProductData }) => {
   const [currentProduct, setCurrentProduct] = useState(null);
 
   const discount = user?.user?.discount || 0;
-  const api = "http://localhost:8080/product";
+  const api = "https://backend.umairabaya.com/product";
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -36,7 +36,7 @@ const ShopSection = ({ subcategoryId, searchProductData }) => {
       try {
         setLoading(true);
         const [categoriesRes, coursesRes] = await Promise.all([
-          axios.get("http://localhost:8080/category"),
+          axios.get("https://backend.umairabaya.com/category"),
           axios.get(api),
         ]);
         setCategories(categoriesRes.data);

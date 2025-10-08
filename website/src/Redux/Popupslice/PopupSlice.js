@@ -7,7 +7,7 @@ export const createPopup = createAsyncThunk(
   async (popupData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/popup/users/createPopup",
+        "https://backend.umairabaya.com/popup/users/createPopup",
         popupData,
         { headers: { "Content-Type": "multipart/form-data" } } 
       );
@@ -25,7 +25,7 @@ export const getPopupById = createAsyncThunk(
   async (popupId, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/popup/admin/getPopupById",
+        "https://backend.umairabaya.com/popup/admin/getPopupById",
         { params: { id: popupId } } // query param
       );
       return response.data.data;
@@ -43,7 +43,7 @@ export const getPopups = createAsyncThunk(
   async ({ page = 1, limit = 10, search = "", city, country }, { rejectWithValue }) => {
     try {
       const params = { page, limit, search, city, country };
-      const response = await axios.get("http://localhost:8080/api/getPopupByFilter", { params });
+      const response = await axios.get("https://backend.umairabaya.com/api/getPopupByFilter", { params });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || "Fetch failed");
@@ -57,7 +57,7 @@ export const updatePopup = createAsyncThunk(
   async ({ id, popupData }, { rejectWithValue }) => {
     try {
       const response = await axios.put(
-        "http://localhost:8080/popup/admin/updatePopup",
+        "https://backend.umairabaya.com/popup/admin/updatePopup",
         popupData, // goes into req.body
         { params: { id }, headers: { "Content-Type": "multipart/form-data" } } // id in query
       );
@@ -76,7 +76,7 @@ export const deletePopup = createAsyncThunk(
   async (popupId, { rejectWithValue }) => {
     try {
       await axios.delete(
-        "http://localhost:8080/popup/admin/deletePopup",
+        "https://backend.umairabaya.com/popup/admin/deletePopup",
         { params: { id: popupId } } 
       );
       return popupId;

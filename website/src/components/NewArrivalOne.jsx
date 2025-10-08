@@ -22,7 +22,7 @@
 //     }
 //   }, []);
 
-//   const api = "http://localhost:8080/product";
+//   const api = "https://backend.umairabaya.com/product";
 
 //   useEffect(() => {
 //     const fetchCourses = async () => {
@@ -453,7 +453,7 @@ const NewArrivalOne = () => {
   }, []);
 
   // ✅ API Fetch
-  const api = "http://localhost:8080/product";
+  const api = "https://backend.umairabaya.com/product";
   useEffect(() => {
     const fetchCourses = async () => {
       try {

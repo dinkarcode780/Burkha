@@ -2252,7 +2252,7 @@
 //   const [categories, setCategories] = useState([]);
 //   const [activeCategory, setActiveCategory] = useState('All');
 //   const navigate = useNavigate();
-//   const api = 'http://localhost:8080/product';
+//   const api = 'https://backend.umairabaya.com/product';
 
 //   // Fetch courses
 //   useEffect(() => {
@@ -2272,7 +2272,7 @@
 //   useEffect(() => {
 //     const fetchCategories = async () => {
 //       try {
-//         const res = await axios.get('http://localhost:8080/category');
+//         const res = await axios.get('https://backend.umairabaya.com/category');
 //         setCategories(res.data);
 //       } catch (error) {
 //         toast.error('Error fetching categories');
@@ -2566,7 +2566,7 @@ const HeaderTwo = ({ category }) => {
   const [activeCatMenu, setActiveCatMenu] = useState(false);
   const [activeIndexCat, setActiveIndexCat] = useState(null);
 
-  const api = "http://localhost:8080/product";
+  const api = "https://backend.umairabaya.com/product";
 
   // Fetch courses
   useEffect(() => {
@@ -2586,7 +2586,7 @@ const HeaderTwo = ({ category }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/category");
+        const res = await axios.get("https://backend.umairabaya.com/category");
         setCategories(res.data);
       } catch (error) {
         toast.error("Error fetching categories");

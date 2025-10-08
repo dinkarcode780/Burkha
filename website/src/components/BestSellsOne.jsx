@@ -9,7 +9,7 @@ const BestSellsOne = () => {
   const [courses, setCourses] = useState([]);
   const [filterText, setFilterText] = useState("");
 
-  const api = "http://localhost:8080/product";
+  const api = "https://backend.umairabaya.com/product";
 
   useEffect(() => {
     const fetchCourses = async () => {

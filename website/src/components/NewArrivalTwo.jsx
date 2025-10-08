@@ -14,16 +14,16 @@
 //       try {
 //         setLoading(true);
 //         // Fetch main course by ID
-//         const res = await axios.get(`http://localhost:8080/product/${id}`);
+//         const res = await axios.get(`https://backend.umairabaya.com/product/${id}`);
 //         const main = res.data;
 //         setMainCourse(main);
 
 //         // Now fetch all courses with the same category ID
 //         const sameCategoryRes = await axios.get(
-//           `http://localhost:8080/product/category/${main.category._id}`
+//           `https://backend.umairabaya.com/product/category/${main.category._id}`
 //         );
 //         const subCategoryRes = await axios.get(
-//           `http://localhost:8080/product/subcategory/${main.category._id}`
+//           `https://backend.umairabaya.com/product/subcategory/${main.category._id}`
 //         );
 //         // Filter out the main course from the list
 //         const filtered = sameCategoryRes.data.filter((course) => course._id !== main._id);
@@ -511,13 +511,13 @@
 //       try {
 //         setLoading(true);
 //         // Fetch main course by ID
-//         const res = await axios.get(`http://localhost:8080/product/${id}`);
+//         const res = await axios.get(`https://backend.umairabaya.com/product/${id}`);
 //         const main = res.data;
 //         setMainCourse(main);
 
 //         // Now fetch all courses with the same category ID
 //         const sameCategoryRes = await axios.get(
-//             `http://localhost:8080/product/category/${main.category}`
+//             `https://backend.umairabaya.com/product/category/${main.category}`
 //         );
 //         console.log(sameCategoryRes,'sdfgn')
 //         // Filter out the main course from the list
@@ -721,13 +721,13 @@ const NewArrivalTwo = () => {
       try {
         setLoading(true);
         // Fetch main product by ID
-        const res = await axios.get(`http://localhost:8080/product/${id}`);
+        const res = await axios.get(`https://backend.umairabaya.com/product/${id}`);
         const main = res.data;
         setMainProduct(main);
 
         // Now fetch all products with the same category ID
         const sameCategoryRes = await axios.get(
-          `http://localhost:8080/product/category/${main.category}`
+          `https://backend.umairabaya.com/product/category/${main.category}`
         );
         console.log(sameCategoryRes, "Same category products response");
 

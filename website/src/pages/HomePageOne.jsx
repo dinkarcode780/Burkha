@@ -15,6 +15,10 @@ import ColorInit from "../helper/ColorInit";
 import Slidder from "../pages/Slidder/Slidder"
 import HomeCategoryAndSubcategoryPage from "./HomeCategoyAdnSucategoryPage/HomeCategoyAdnSucategoryPage";
 import SaleOfferShowPage from "./SaleOfferShow/SaleOfferShowPage";
+import HomeAbout from "./HomeAbout/HomeAbout";
+import WhyChooseUs from "./WhyChooseUs/WhyChooseUs";
+import OfferSection from "./offerSection/OfferSection";
+import Testom from "./HomeTestimonials/Testom";
 // import ImageSlider from "../pages/ImageSlider"; // Corrected from Slidder to ImageSlider
 const HomePageOne = ({ setsubcategory, data1 }) => {
   return (
@@ -34,6 +38,12 @@ const HomePageOne = ({ setsubcategory, data1 }) => {
       <Slidder />
       <HomeCategoryAndSubcategoryPage/>
 
+      <HomeAbout />
+
+      <WhyChooseUs />
+      <OfferSection />
+
+<Testom />
       {/* RecommendedOne */}
       <RecommendedOne />
 

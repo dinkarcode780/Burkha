@@ -16,7 +16,7 @@ const ContactDisplay = () => {
 
   const fetchEnquiries = async () => {
     try {
-      const response = await fetch('http://localhost:8080/contact/allcontact');
+      const response = await fetch('https://backend.umairabaya.com/contact/allcontact');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

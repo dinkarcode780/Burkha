@@ -15,7 +15,7 @@ const UpdateSlidderPage = () => {
     const fetchSliders = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/slidder/admin/getSliddder"
+          "https://backend.umairabaya.com/slidder/admin/getSliddder"
         );
         if (response.data.success) {
           setSliders(response.data.data);
@@ -66,7 +66,7 @@ const UpdateSlidderPage = () => {
 
     try {
       const response = await axios.put(
-        "http://localhost:8080/slidder/admin/updateSlidder",
+        "https://backend.umairabaya.com/slidder/admin/updateSlidder",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

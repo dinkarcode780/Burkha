@@ -151,8 +151,8 @@
 //       try {
 //         setLoading(true);
 //         const [categoriesRes, productsRes] = await Promise.all([
-//           axios.get("http://localhost:8080/category"),
-//           axios.get("http://localhost:8080/product"),
+//           axios.get("https://backend.umairabaya.com/category"),
+//           axios.get("https://backend.umairabaya.com/product"),
 //         ]);
 //         setCategories(categoriesRes.data);
 //         setProducts(productsRes.data);
@@ -308,8 +308,8 @@
 //       try {
 //         setLoading(true);
 //         const [categoriesRes, productsRes] = await Promise.all([
-//           axios.get("http://localhost:8080/category"),
-//           axios.get("http://localhost:8080/product"),
+//           axios.get("https://backend.umairabaya.com/category"),
+//           axios.get("https://backend.umairabaya.com/product"),
 //         ]);
 //         console.log("Categories API Response:", categoriesRes.data);
 //         console.log("Products API Response:", productsRes.data);
@@ -491,8 +491,8 @@ const HomeCategoryAndSubcategoryPage = () => {
       try {
         setLoading(true);
         const [categoriesRes, productsRes] = await Promise.all([
-          axios.get("http://localhost:8080/category"),
-          axios.get("http://localhost:8080/product"),
+          axios.get("https://backend.umairabaya.com/category"),
+          axios.get("https://backend.umairabaya.com/product"),
         ]);
         console.log("Categories API Response:", categoriesRes.data);
         console.log("Products API Response:", productsRes.data);

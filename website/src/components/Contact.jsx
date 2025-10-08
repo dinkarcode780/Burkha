@@ -79,7 +79,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/contact/add",
+        "https://backend.umairabaya.com/contact/add",
         formData
       );
       setSubmitStatus({

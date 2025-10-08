@@ -25,7 +25,7 @@
 
 //       try {
 //         setIsLoading(true);
-//         const response = await axios.get(`http://localhost:8080/paymentuser/payments/${userId}`);
+//         const response = await axios.get(`https://backend.umairabaya.com/paymentuser/payments/${userId}`);
 //         setPayments(response.data.data);
 //       } catch (error) {
 //         console.error("Error fetching payments:", error);
@@ -168,7 +168,7 @@ const Dashboard = ({ user }) => {
       try {
         setIsLoading(true);
         const response = await axios.get(
-          `http://localhost:8080/paymentuser/payments/${userId}`
+          `https://backend.umairabaya.com/paymentuser/payments/${userId}`
         );
         setPayments(response.data.data);
       } catch (error) {

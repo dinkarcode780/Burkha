@@ -12,7 +12,7 @@ const SaleOfferShowPage = () => {
   useEffect(() => {
     const fetchOffers = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/salleoffer/users/getAllSaleOffers');
+        const response = await axios.get('https://backend.umairabaya.com/salleoffer/users/getAllSaleOffers');
         if (response.data && Array.isArray(response.data.data)) {
           setOffers(response.data.data);
         } else {

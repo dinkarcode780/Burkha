@@ -36,9 +36,9 @@ const [showPopup, setShowPopup] = useState(false);
   const fetchData = async () => {
     try {
       const [categoryRes, subCategoryRes, productRes] = await Promise.all([
-        axios.get("http://localhost:8080/category"),
-        axios.get("http://localhost:8080/subcategory"),
-        axios.get("http://localhost:8080/product"),
+        axios.get("https://backend.umairabaya.com/category"),
+        axios.get("https://backend.umairabaya.com/subcategory"),
+        axios.get("https://backend.umairabaya.com/product"),
       ]);
 
       setCategories(categoryRes.data);
@@ -62,7 +62,7 @@ const [showPopup, setShowPopup] = useState(false);
   //   try {
   //     console.log(searchQuery, "search");
   //     const response = await axios.get(
-  //       `http://localhost:8080/product/search?query=${searchQuery}`
+  //       `https://backend.umairabaya.com/product/search?query=${searchQuery}`
   //     );
 
   //     console.log(response);
@@ -76,7 +76,7 @@ const [showPopup, setShowPopup] = useState(false);
   try {
     console.log(searchQuery, "search");
     const response = await axios.get(
-      `http://localhost:8080/product/search?query=${searchQuery}`
+      `https://backend.umairabaya.com/product/search?query=${searchQuery}`
     );
     setSearchResults(response.data); // <-- store results
     setShowPopup(true); // <-- open popup

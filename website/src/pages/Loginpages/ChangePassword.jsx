@@ -71,7 +71,7 @@ const ChangePassword = () => {
       setIsLoading(true);
 
       const response = await axios.post(
-        "http://localhost:8080/user/resetpassword",
+        "https://backend.umairabaya.com/user/resetpassword",
         {
           email: resetData.email,
           oldPassword: resetData.oldPassword,

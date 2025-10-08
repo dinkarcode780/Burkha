@@ -46,7 +46,7 @@ const AddSlidderPage = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8080/slidder/admin/createSlidder", formData, {
+      const response = await axios.post("https://backend.umairabaya.com/slidder/admin/createSlidder", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

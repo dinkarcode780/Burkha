@@ -86,7 +86,7 @@ const Checkout = () => {
       order_id: data.id,
       handler: async (response) => {
         try {
-          const verifyURL = "http://localhost:8080/paymentuser/verify";
+          const verifyURL = "https://backend.umairabaya.com/paymentuser/verify";
           const verifyPayload = {
             razorpay_order_id: response.razorpay_order_id,
             razorpay_payment_id: response.razorpay_payment_id,
@@ -163,7 +163,7 @@ const Checkout = () => {
 
     try {
       setIsLoading(true);
-      const orderURL = "http://localhost:8080/paymentuser/orders";
+      const orderURL = "https://backend.umairabaya.com/paymentuser/orders";
       console.log(orderURL);
 
       const userDataStr = localStorage.getItem("user");
