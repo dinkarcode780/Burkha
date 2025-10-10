@@ -119,7 +119,7 @@ const OfferSection = () => {
                   {/* Content Section - Right Side */}
                   <div 
                     className="col-md-6 p-4 p-md-5 d-flex align-items-center"
-                    style={{ background: offer.bgGradient, color: offer.textColor }}
+                    style={{ background: offer.bgGradient, color: offer.textColor ,}}
                   >
                     <div className="w-100">
                       {/* Offer Title */}
@@ -181,11 +181,11 @@ const OfferSection = () => {
                       </div>
 
                       {/* Shop Now Button */}
-                      <div className="fade-in-up delay-500">
+                      {/* <div className="fade-in-up delay-500">
                         <button className="btn btn-light fw-semibold px-4 py-2 rounded-pill w-100 shadow">
                           Shop Now
                         </button>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ const OfferSection = () => {
               <button
                 key={index}
                 onClick={() => setActiveSlide(index)}
-                className={`btn btn-sm rounded-circle ${index === activeSlide ? 'bg-white' : 'bg-white bg-opacity-50'}`}
+                // className={`btn btn-sm rounded-circle ${index === activeSlide ? 'bg-white' : 'bg-white bg-opacity-50'}`}
                 style={{ width: '12px', height: '12px', padding: 0 }}
               />
             ))}

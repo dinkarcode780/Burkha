@@ -246,13 +246,40 @@ const [showPopup, setShowPopup] = useState(false);
       <header className="header-middle bg-color-one border-bottom border-gray-100">
         <div className="container container-lg">
           <nav className="header-inner flex-between">
-            <div className="logo">
+            {/* <div className="logo">
               <Link to="/" className="mobile-menu__logo">
                 <h3 className="logo-text">
                   Umair <span className="logo-subtext">Abaya</span>
                 </h3>
               </Link>
-            </div>
+            </div> */}
+
+            {/* <div className="logo d-flex align-items-center">
+  <Link to="/" className="mobile-menu__logo d-flex align-items-center">
+    <img 
+      src="https://static.vecteezy.com/system/resources/previews/011/954/845/non_2x/hijab-store-logo-design-vector.jpg" 
+      alt="Umair Abaya Logo"
+      className="logo-img me-2"
+      style={{ height: '70px', width: 'auto', }}
+    />
+    <h3 className="logo-text mb-0">
+      Umair <span className="logo-subtext">Abaya</span>
+    </h3>
+  </Link>
+</div> */}
+<div className="logo d-flex align-items-center">
+  <Link to="/" className="mobile-menu__logo d-flex align-items-center">
+    <img 
+      src="https://static.vecteezy.com/system/resources/previews/011/954/845/non_2x/hijab-store-logo-design-vector.jpg" 
+      alt="Umair Abaya Logo"
+      className="logo-img me-2"
+      style={{ height: '50px', width: 'auto', borderRadius: '50%' }}
+    />
+    <h3 className="logo-text mb-0">
+      Umair <span className="logo-subtext">Abaya</span>
+    </h3>
+  </Link>
+</div>
             <form
               onSubmit={handleSearchSubmit}
               className="flex-align flex-wrap form-location-wrapper"

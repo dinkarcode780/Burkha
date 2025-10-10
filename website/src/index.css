@@ -605,7 +605,7 @@ body {
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
-  background-color: #e5e7eb; /* gray-200 */
+  background-color: #e5e7eb; 
 }
 
 .category-image img {
@@ -1350,6 +1350,34 @@ body {
 }
 
 
+
+/* about css */
+
+.about{
+  /* background-color: red; */
+  position: relative;
+  top: 20px;
+}
+.habout{
+  /* background-color: seagreen; */
+  position: relative;
+    top: 20px;
+    left: 5px;
+}
+
+.muhe{
+  position: relative;
+  top: 5vh;
+}
+
+.onE{
+  position: relative;
+  top: 4vh;
+}
 /* .testimonials-cards-container >:nth-child(1){
   background-color: black;
 } */
+
+.logo-image{
+  border-radius: 50%;
+}
