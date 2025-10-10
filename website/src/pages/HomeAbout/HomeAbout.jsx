@@ -37,7 +37,7 @@ const HomeAbout = () => {
         {/* Welcome section */}
         <div className="text-center mb-5 muhe">
           <h2 className="display-5 fw-bold text-dark mb-4">
-            WELCOME TO COMFO
+            WELCOME TO Umair Abaya
           </h2>
         </div>
 
